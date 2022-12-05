@@ -2,7 +2,7 @@ import React from "react";
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
   
-import HomeScreen from "./screens/HomeScreen";
+import HomeScreen from "./screens/HomeScreen.js";
 import UserScreen from "./screens/UserScreen";
 import SettingScreen from "./screens/SettingScreen";
   
@@ -15,7 +15,7 @@ const AppNavigator = createStackNavigator(
   {
     defaultNavigationOptions: {
       headerStyle: {
-        backgroundColor: "#006600",
+        backgroundColor: "#189AB4",
       },
       headerTitleStyle: {
         fontWeight: "bold",

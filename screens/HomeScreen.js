@@ -11,8 +11,8 @@ const Home = (props) => {
 const [input, setInput] = useState("");
 return (
 	<View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-	<Text style={{ color: "#006600", fontSize: 40 }}>Home Screen!</Text>
-	<Ionicons name="ios-home" size={80} color="#006600" />
+	<Text style={{ color: "#189AB4", fontSize: 40 }}>Home Screen!</Text>
+	<Ionicons name="ios-home" size={80} color="#189AB4" />
 	<TextInput
 		placeholder="Enter your name"
 		value={input}
@@ -20,7 +20,7 @@ return (
 	/>
 	<Button
 		title="Go to User Screen"
-		color="#006600"
+		color="#189AB4"
 		onPress={() => props.navigation.navigate("User", { username: input })}
 	/>
 	</View>
