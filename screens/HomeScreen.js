@@ -6,7 +6,7 @@ import {
   HeaderButton,
   HeaderButtons,
 } from "react-navigation-header-buttons";
-import HistoryList from "../components/header/HistoryList";
+import HistoryList from "../components/HistoryList";
 
 const Home = (props) => {
   return (
