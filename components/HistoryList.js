@@ -8,21 +8,7 @@ import {
   StatusBar,
   Button,
 } from "react-native";
-
-const DATA = [
-  {
-    title: "Today",
-    data: ["Pizza", "Burger", "Risotto"],
-  },
-  {
-    title: "05 Dez",
-    data: ["French Fries", "Onion Rings", "Fried Shrimps"],
-  },
-  {
-    title: "04 Dez",
-    data: ["Water", "Coke", "Beer"],
-  }
-];
+import { useTasks } from '../hooks/useTasks';
 
 const removeItem = () => {}
 
@@ -42,21 +28,25 @@ const Item = ({ title }) => (
   </View>
 );
 
-const HistoryList = () => (
-  <SafeAreaView style={styles.container}>
-    <SectionList
-      sections={DATA}
-      keyExtractor={(item, index) => item + index}
-      renderItem={({ item }) => <Item title={item} />}
-      renderSectionHeader={({ section: { title } }) => (
-        <>
-          <Separator />
-          <Text style={styles.header}>{title}</Text>
-        </>
-      )}
-    />
-  </SafeAreaView>
-);
+const HistoryList = () => {
+  const taskList = useTasks();
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <SectionList
+        sections={taskList}
+        keyExtractor={(item, index) => item + index}
+        renderItem={({ item }) => <Item title={item} />}
+        renderSectionHeader={({ section: { title } }) => (
+          <>
+            <Separator />
+            <Text style={styles.header}>{title}</Text>
+          </>
+        )}
+      />
+    </SafeAreaView>
+    );
+};
 
 const styles = StyleSheet.create({
   container: {

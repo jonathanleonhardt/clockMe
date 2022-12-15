@@ -5,6 +5,7 @@ import { createStackNavigator } from "react-navigation-stack";
 import HomeScreen from "./screens/HomeScreen.js";
 import UserScreen from "./screens/UserScreen";
 import SettingScreen from "./screens/SettingScreen";
+import { TaskProvider } from "./hooks/useTasks.js";
   
 const AppNavigator = createStackNavigator(
   {
@@ -33,8 +34,10 @@ const Navigator = createAppContainer(AppNavigator);
   
 export default function App() {
   return (
-    <Navigator>
-      <HomeScreen />
-    </Navigator>
+    <TaskProvider>
+      <Navigator>
+        <HomeScreen />
+      </Navigator>
+    </TaskProvider>
   );
 }
