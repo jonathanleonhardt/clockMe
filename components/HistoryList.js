@@ -24,6 +24,8 @@ const DATA = [
   }
 ];
 
+const removeItem = () => {}
+
 const Separator = () => (
   <View style={styles.separator} />
 );
@@ -34,7 +36,7 @@ const Item = ({ title }) => (
     <Button
       onPress={removeItem}
       title="Remove"
-      color="#841584"
+      color="#189AB4"
       style={styles.button}
     />
   </View>

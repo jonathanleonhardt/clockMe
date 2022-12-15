@@ -1,17 +1,19 @@
-import React, { useState } from "react";
-import { Text, View, TextInput, Button } from "react-native";
+import React from "react";
+import { View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import {
   Item,
   HeaderButton,
   HeaderButtons,
 } from "react-navigation-header-buttons";
+import AddTask from '../components/AddTask';
 import HistoryList from "../components/HistoryList";
 
 const Home = (props) => {
   return (
     <View style={{ flex: 1 }}>
       <HistoryList></HistoryList>
+      <AddTask />
     </View>
   );
 };
