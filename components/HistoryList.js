@@ -24,12 +24,18 @@ const DATA = [
   }
 ];
 
+const Separator = () => (
+  <View style={styles.separator} />
+);
+
 const Item = ({ title }) => (
   <View style={styles.item}>
     <Text style={styles.title}>{title}</Text>
     <Button
+      onPress={removeItem}
       title="Remove"
       color="#841584"
+      style={styles.button}
     />
   </View>
 );
@@ -41,7 +47,10 @@ const HistoryList = () => (
       keyExtractor={(item, index) => item + index}
       renderItem={({ item }) => <Item title={item} />}
       renderSectionHeader={({ section: { title } }) => (
-        <Text style={styles.header}>{title}</Text>
+        <>
+          <Separator />
+          <Text style={styles.header}>{title}</Text>
+        </>
       )}
     />
   </SafeAreaView>
@@ -54,6 +63,8 @@ const styles = StyleSheet.create({
     marginHorizontal: 14
   },
   item: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     backgroundColor: "#D4F1F4",
     padding: 20,
     marginVertical: 4,
@@ -67,6 +78,14 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 18
   },
+  button: {
+    borderRadius: 10
+  },
+  separator: {
+    marginVertical: 8,
+    borderBottomColor: '#737373',
+    borderBottomWidth: StyleSheet.hairlineWidth,
+  }
 });
 
 export default HistoryList;
